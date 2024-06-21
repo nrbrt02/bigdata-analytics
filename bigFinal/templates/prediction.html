@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{%static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <title>PREDICTION</title>
+</head>
+<body>
+
+<div class="container">
+    <br>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}.
+        </div>
+    {% endfor %}
+{% endif %}
+<h1>Enter values for prediction</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="radius_mean">radius_mean:</label>
+    <input type="text" name="radius_mean" class="form-control"><br>
+    <label for="texture_mean">texture_mean:</label>
+    <input type="text" name="texture_mean"class="form-control"><br>
+    <label for="perimeter_mean">perimeter_mean:</label>
+    <input type="text" name="perimeter_mean"class="form-control"><br>
+    <label for="area_mean">area_mean:</label>
+    <input type="text" name="area_mean" class="form-control"><br>
+    <input type="text" name="smoothness_mean" class="form-control"><br>
+    <input type="text" name="compactness_mean" class="form-control"><br>
+    <input type="text" name="concavity_mean" class="form-control"><br>
+    <input type="text" name="concave_points_mean" class="form-control"><br>
+    <input type="text" name="symmetry_mean" class="form-control"><br>
+    <input type="text" name="fractal_dimension_mean" class="form-control"><br>
+    <input type="text" name="radius_se" class="form-control"><br>
+    <input type="text" name="texture_se" class="form-control"><br>
+    <input type="text" name="perimeter_se" class="form-control"><br>
+    <input type="text" name="area_se" class="form-control"><br>
+    <input type="text" name="smoothness_se" class="form-control"><br>
+    <input type="text" name="compactness_se" class="form-control"><br>
+    <input type="text" name="concavity_se" class="form-control"><br>
+    <input type="text" name="concave_points_se" class="form-control"><br>
+    <input type="text" name="symmetry_se" class="form-control"><br>
+    <input type="text" name="fractal_dimension_se" class="form-control"><br>
+    <input type="text" name="radius_worst" class="form-control"><br>
+    <input type="text" name="texture_worst" class="form-control"><br>
+    <input type="text" name="perimeter_worst" class="form-control"><br>
+    <input type="text" name="area_worst" class="form-control"><br>
+    <input type="text" name="smoothness_worst" class="form-control"><br>
+    <input type="text" name="compactness_worst" class="form-control"><br>
+    <input type="text" name="concavity_worst" class="form-control"><br>
+    <input type="text" name="concave_points_worst" class="form-control"><br>
+    <input type="text" name="symmetry_worst" class="form-control"><br>
+    <input type="text" name="fractal_dimension_worst" class="form-control"><br>
+    <input type="submit" name="predict" class="btn btn-primary btn-lg">
+</form>
+    </div>
+</body>
+</html>
